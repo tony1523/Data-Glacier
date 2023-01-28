@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/nba-salaries.css">
+      </head>
+<body>
+
+<h2> NBA Salary based on stats</h2>
+
+<div class="maindiv">
+   <form action="{{ url_for('predict')}}"method="post">
+    <label for="lname">FG%</label>
+    <input type="text" id="fg" name="FG%" pattern="^\d*(\.\d{0,2})?$" 
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter field goal percentage per game.." required>
+
+    <label for="lname">3P%</label>
+    <input type="text" id="3p" name="3P%" pattern="^\d*(\.\d{0,2})?$"
+     oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter 3 point percentage per game.." required>
+
+    <label for="lname">FT%</label>
+    <input type="text" id="ft" name="FT%" pattern="^\d*(\.\d{0,2})?$" 
+    
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter free throw percentage per game.." required>
+    
+    <label for="fname">Points</label>
+    <input type="text" id="pts" name="PTS" pattern="^\d*(\.\d{0,2})?$" 
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter points per game.." required>
+
+    <label for="lname">Assists</label>
+    <input type="text" id="ast" name="AST" pattern="^\d*(\.\d{0,2})?$" 
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter assists per game.." required>
+
+    <label for="lname">Rebounds</label>
+    <input type="text" id="trb" name="TRB" pattern="^\d*(\.\d{0,2})?$" 
+    
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter rebounds per game...." required>
+
+
+    <label for="lname">Blocks</label>
+    <input type="text" id="blk" name="BLK" pattern="^\d*(\.\d{0,2})?$" 
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter blocks per game.." required>
+
+    <label for="lname">Steals</label>
+    <input type="text" id="stl" name="STL" pattern="^\d*(\.\d{0,2})?$" 
+    oninvalid="setCustomValidity('Please enter numbers')" placeholder="Enter steals per game.." required>
+    
+     <label for="lname">All Star Selection (1 for yes and 0 for no) </label>
+     <input type="number" id="all-star" name="All-Star" min="0" max="1" required>
+    
+  
+    <input type="submit" value="Submit">
+  </form>
+ 
+{{ prediction_text }}
+
+
+</div>
+
+</body>
+</html>
+
